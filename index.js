@@ -8,7 +8,7 @@ const bgGreen = chalk.black.bgGreen;
 
 var highscore = { 
   name: "Bhavya",
-  topScore: 8
+  topScore: 9
 };
 var score = 0;
 
