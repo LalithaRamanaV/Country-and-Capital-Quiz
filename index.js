@@ -12,7 +12,7 @@ var highscore = {
 };
 var score = 0;
 
-quizList = [
+var quizList = [
   {
     question: "What is the capital of Afghanistan? \n",
     answer: "Kabul"
@@ -58,7 +58,7 @@ quizList = [
 ]
 
 function welcomeMessage(){
-  console.log(bgGreen("            Country and Capital            "));
+  console.log(bgGreen("            Country and Capital            \n"));
   console.log(" A quiz to check how well do you know the countries and their capitals.  ")
 
   console.log("\n");
@@ -111,3 +111,5 @@ function displayScore(){
 }
 
 welcomeMessage();
+playGame();
+displayScore();
