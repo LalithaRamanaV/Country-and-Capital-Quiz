@@ -7,8 +7,8 @@ const correct = chalk.bold.green;
 const bgGreen = chalk.black.bgGreen;
 
 var highscore = { 
-  name: "Bhavya",
-  topScore: 9
+  nameL: "Bhavya",
+  topScoreL: 8
 };
 var score = 0;
 
@@ -18,7 +18,7 @@ var quizList = [
     answer: "Kabul"
   },
   {
-    question: "What is the capital of Australia?\n ",
+    question: "What is the capital of Australia? \n",
     answer: "Canberra"
   },
   {
@@ -58,7 +58,7 @@ var quizList = [
 ]
 
 function welcomeMessage(){
-  console.log(bgGreen("            Country and Capital            \n"));
+  console.log(bgGreen("            Country and Capital           \n "));
   console.log(" A quiz to check how well do you know the countries and their capitals.  ")
 
   console.log("\n");
@@ -69,7 +69,8 @@ function welcomeMessage(){
   console.log( (("Welcome to")+ chalk.cyan(" How well do you know the country capitals ") + chalk.bold.white(userName )+"!" ));
 
   console.log("Let's play! ");
-  readlineSync.question( chalk.cyan("Can you beat this HIGHSCORE " + highscore.topScore +" ? Press enter to play! \n") );
+  readlineSync.question( chalk.cyan("Can you beat this HIGHSCORE " + highscore.topScoreL +" ? Press enter to play! \n") );
+  
   playGame();
 }
  
@@ -101,15 +102,27 @@ function playGame(){
 function displayScore(){
   console.log((chalk.cyan("Hurray! Your total score is " + chalk.green(score))));
 
-  if(score > highscore.topScore){
-    highscore.topScore = score;
-    console.log("Congratulations! You have beaten the highscore");
-    console.log("New HIGHSCORE: "+ highscore);
-  }
-  console.log(chalk.cyan("Thanks for playing.") );
-  console.log(bgGreen("Don't forget to share screenshot."));
+  //leaderboard
+  console.log(chalk.keyword('green').bold("\n*****Check out the Leaderboard*****"));
+  printScoreBoard(highscore);
+
+
+
+//function to print leaderBoard
+function printScoreBoard(highscore) {
+    console.log(chalk.keyword('green').bold(highscore.nameL + " : " + highscore.topScoreL));
 }
 
+  if(score > highscore.topScoreL){
+    highscore.topScoreL = score;
+    console.log("\nCongratulations! You have beaten the highscore");
+    console.log(bgGreen("Don't forget to share screenshot."));
+    console.log("New HIGHSCORE: "+ score);
+  }
+  console.log(chalk.cyan("Thanks for playing.") );
+}
+
+
+  
+
 welcomeMessage();
-playGame();
-displayScore();
