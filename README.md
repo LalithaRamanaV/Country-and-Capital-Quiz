@@ -15,5 +15,5 @@ A CLI quiz application is to play a simple quiz about country and their capitals
 * If final score of user is greater updating the leaderboard and greet the user by displaying a message
 # Demo
 * Please check the below link
-https://replit.com/@LalithaVadavall/2CLICountry-and-Capital#index.js?embed=1&output=1
+https://replit.com/@LalithaVadavall/2CLICountry-and-Capital?embed=1&output=1
 
